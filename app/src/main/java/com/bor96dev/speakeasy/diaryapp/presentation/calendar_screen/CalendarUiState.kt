@@ -1,9 +1,9 @@
 package com.bor96dev.speakeasy.diaryapp.presentation.calendar_screen
 
-import com.bor96dev.speakeasy.diaryapp.domain.Event
+import com.bor96dev.speakeasy.diaryapp.domain.Task
 import java.util.Date
 
-data class CalendarUiState (
+data class CalendarUiState(
     val selectedDate: Date = Date(),
-    val eventsForDay: List<Event> = emptyList()
+    val tasksForDay: List<Task> = emptyList(),
 )
