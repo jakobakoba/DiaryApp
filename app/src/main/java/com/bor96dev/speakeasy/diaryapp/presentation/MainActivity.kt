@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DiaryAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CalendarScreen()
+                    CalendarScreen(innerPadding)
                 }
             }
         }
