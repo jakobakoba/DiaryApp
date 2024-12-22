@@ -72,4 +72,6 @@ dependencies {
     implementation(libs.fragment.ktx)
     //navigation
     implementation(libs.navigation.compose)
+    //gson
+    implementation(libs.gson)
 }
