@@ -70,4 +70,6 @@ dependencies {
     ksp(libs.hilt.android.compiler)
     //by viewModels delegate
     implementation(libs.fragment.ktx)
+    //navigation
+    implementation(libs.navigation.compose)
 }
