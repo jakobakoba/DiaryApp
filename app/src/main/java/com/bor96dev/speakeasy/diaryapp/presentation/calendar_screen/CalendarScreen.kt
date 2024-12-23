@@ -3,8 +3,11 @@ package com.bor96dev.speakeasy.diaryapp.presentation.calendar_screen
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -27,13 +30,27 @@ fun CalendarScreen(
 
         Spacer(modifier = Modifier.height(4.dp))
 
-        TasksTimeline(
-            tasks = uiState.tasksForDay.filter{
-                val taskDate = Instant.ofEpochMilli(it.dateStart).atZone(ZoneId.systemDefault()).toLocalDate()
-                taskDate == selectedDate
-            },
-            currentDate = selectedDate
-        )
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        ) {
+            Column(
+                modifier = Modifier
+                    .padding(16.dp)
+            ){
+
+                TasksTimeline(
+                    tasks = uiState.tasksForDay.filter{
+                        val taskDate = Instant.ofEpochMilli(it.dateStart).atZone(ZoneId.systemDefault()).toLocalDate()
+                        taskDate == selectedDate
+                    },
+                    currentDate = selectedDate
+                )
+            }
+        }
+
     }
 }
 
