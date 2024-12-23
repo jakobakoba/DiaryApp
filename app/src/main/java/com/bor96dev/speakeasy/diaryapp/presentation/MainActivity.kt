@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.bor96dev.speakeasy.diaryapp.presentation.calendar_screen.CalendarScreen
+import com.bor96dev.speakeasy.diaryapp.presentation.calendar_screen.CalendarUiState
 import com.bor96dev.speakeasy.diaryapp.presentation.ui.theme.DiaryAppTheme
+import java.util.Date
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +19,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             DiaryAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CalendarScreen(innerPadding)
+                    val uiState = CalendarUiState(
+                        selectedDate = Date(),
+                        emptyList()
+                    )
+                    CalendarScreen(innerPadding, uiState)
                 }
             }
         }

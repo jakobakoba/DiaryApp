@@ -4,6 +4,6 @@ data class Task(
     val id: Int,
     val dateStart: Long,
     val dateFinish: Long,
-    val name: String,
+    val title: String,
     val description: String? = null,
 )
