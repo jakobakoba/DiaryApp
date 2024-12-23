@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.bor96dev.speakeasy.diaryapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -70,4 +70,12 @@ dependencies {
     ksp(libs.hilt.android.compiler)
     //by viewModels delegate
     implementation(libs.fragment.ktx)
+    //navigation
+    implementation(libs.navigation.compose)
+    //gson
+    implementation(libs.gson)
+    //calendar
+    implementation(libs.compose.calendar)
+    //datetime
+    implementation(libs.kotlinx.datetime)
 }

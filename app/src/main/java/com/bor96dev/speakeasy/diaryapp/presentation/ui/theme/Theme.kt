@@ -1,6 +1,5 @@
-package com.bor96dev.speakeasy.diaryapp.ui.theme
+package com.bor96dev.speakeasy.diaryapp.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
