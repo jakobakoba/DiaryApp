@@ -27,11 +27,6 @@ fun TasksTimeline(
     modifier: Modifier = Modifier,
 ) {
 
-    val tasksForDay = tasks.filter { task ->
-        val taskDate = Instant.ofEpochMilli(task.dateStart).atZone(ZoneId.systemDefault()).toLocalDate()
-        taskDate == currentDate
-    }
-
     LazyColumn(modifier = modifier) {
         items(24) { hour ->
 
@@ -63,13 +58,8 @@ fun HourlyTimeline(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text("${hour.toString().padStart(2, '0')}:00", modifier = Modifier.weight(1f))
-        tasks.forEach { task ->
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
-            ) {
-                Text(task.title)
-                Column(modifier = Modifier.weight(3f)) {
+
+        Column(modifier = Modifier.weight(3f)) {
                     tasks.forEach { task ->
                         Card(
                             modifier = Modifier.fillMaxWidth(),
@@ -82,5 +72,5 @@ fun HourlyTimeline(
                 }
             }
             }
-        }
-    }
+
+

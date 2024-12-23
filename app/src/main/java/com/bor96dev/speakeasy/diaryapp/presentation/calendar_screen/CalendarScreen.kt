@@ -14,9 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.bor96dev.speakeasy.diaryapp.presentation.calendar_screen.components.TasksTimeline
 import io.github.boguszpawlowski.composecalendar.SelectableCalendar
 import io.github.boguszpawlowski.composecalendar.rememberSelectableCalendarState
-import java.time.Instant
 import java.time.LocalDate
-import java.time.ZoneId
 
 @Composable
 fun CalendarScreen(
@@ -42,10 +40,7 @@ fun CalendarScreen(
             ){
 
                 TasksTimeline(
-                    tasks = uiState.tasksForDay.filter{
-                        val taskDate = Instant.ofEpochMilli(it.dateStart).atZone(ZoneId.systemDefault()).toLocalDate()
-                        taskDate == selectedDate
-                    },
+                    tasks = uiState.tasksForDay,
                     currentDate = selectedDate
                 )
             }
