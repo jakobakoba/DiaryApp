@@ -8,16 +8,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import io.github.boguszpawlowski.composecalendar.StaticCalendar
+import io.github.boguszpawlowski.composecalendar.SelectableCalendar
+import io.github.boguszpawlowski.composecalendar.rememberSelectableCalendarState
 
 @Composable
 fun CalendarScreen(
     innerPaddingValues: PaddingValues
 ) {
-
+    val calendarState = rememberSelectableCalendarState()
     Column(modifier = Modifier.padding(innerPaddingValues)) {
-        StaticCalendar()
+        SelectableCalendar(calendarState = calendarState)
+
         Spacer(modifier = Modifier.height(4.dp))
+
 //        HourlyTimeline(tasks = uiState.tasksForDay)
     }
 }
