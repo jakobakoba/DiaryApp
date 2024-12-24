@@ -11,7 +11,8 @@ composeBom = "2024.04.01"
 
 roomVersion = "2.6.1"
 kspVersion = "2.1.0-1.0.29"
-hiltVersion = "2.49"
+hiltVersion = "2.53"
+hiltNavigationVersion = "1.2.0"
 navigationVersion = "2.8.5"
 
 fragmentKtxVersion = "1.8.5"
@@ -45,6 +46,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltVersion" }
+hilt-navigation-compose = {group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationVersion" }
 
 room-android = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
 room-compiler = {group = "androidx.room", name = "room-compiler", version.ref = "roomVersion"}
@@ -62,6 +64,7 @@ compose-calendar = {group = "io.github.boguszpawlowski.composecalendar", name = 
 kotlinx-datetime = {group = "io.github.boguszpawlowski.composecalendar", name = "kotlinx-datetime", version.ref = "kotlinxDatetimeVersion"}
 
 json-serialization = {group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "jsonSerializationVersion"}
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

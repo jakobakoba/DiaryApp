@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "dateStart": 1678886400000,
+    "dateFinish": 1678890000000,
+    "title": "Morning meeting"
+  },
+  {
+    "id": 2,
+    "dateStart": 1678897200000,
+    "dateFinish": 1678900800000,
+    "title": "Lunch"
+  }
+]
