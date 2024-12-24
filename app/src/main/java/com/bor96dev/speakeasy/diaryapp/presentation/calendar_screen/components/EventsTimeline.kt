@@ -15,14 +15,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.bor96dev.speakeasy.diaryapp.domain.Task
+import com.bor96dev.speakeasy.diaryapp.domain.Event
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 
 @Composable
-fun TasksTimeline(
-    tasks: List<Task>,
+fun EventsTimeline(
+    events: List<Event>,
     currentDate: LocalDate,
     modifier: Modifier = Modifier,
 ) {
@@ -30,14 +30,14 @@ fun TasksTimeline(
     LazyColumn(modifier = modifier) {
         items(24) { hour ->
 
-            val hourTasks = tasks.filter { task ->
-                val startTime = Instant.ofEpochMilli(task.dateStart).atZone(ZoneId.systemDefault()).toLocalDateTime()
+            val hourEvents = events.filter { event ->
+                val startTime = Instant.ofEpochMilli(event.dateStart).atZone(ZoneId.systemDefault()).toLocalDateTime()
                 startTime.hour == hour
             }
 
             HourlyTimeline(
                 hour = hour,
-                tasks = hourTasks,
+                events = hourEvents,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
@@ -50,7 +50,7 @@ fun TasksTimeline(
 @Composable
 fun HourlyTimeline(
     hour: Int,
-    tasks: List<Task>,
+    events: List<Event>,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -60,12 +60,12 @@ fun HourlyTimeline(
         Text("${hour.toString().padStart(2, '0')}:00", modifier = Modifier.weight(1f))
 
         Column(modifier = Modifier.weight(3f)) {
-                    tasks.forEach { task ->
+                    events.forEach { event ->
                         Card(
                             modifier = Modifier.fillMaxWidth(),
                             elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
                         ) {
-                            Text(task.title, modifier = Modifier.padding(8.dp))
+                            Text(event.title, modifier = Modifier.padding(8.dp))
                         }
                     }
 

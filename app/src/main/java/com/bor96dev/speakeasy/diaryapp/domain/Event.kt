@@ -1,6 +1,6 @@
 package com.bor96dev.speakeasy.diaryapp.domain
 
-data class Task(
+data class Event(
     val id: Int,
     val dateStart: Long,
     val dateFinish: Long,

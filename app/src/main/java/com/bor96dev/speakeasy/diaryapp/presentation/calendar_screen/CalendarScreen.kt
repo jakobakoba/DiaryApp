@@ -11,7 +11,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.bor96dev.speakeasy.diaryapp.presentation.calendar_screen.components.TasksTimeline
+import com.bor96dev.speakeasy.diaryapp.presentation.calendar_screen.components.EventsTimeline
 import io.github.boguszpawlowski.composecalendar.SelectableCalendar
 import io.github.boguszpawlowski.composecalendar.rememberSelectableCalendarState
 import java.time.LocalDate
@@ -39,8 +39,8 @@ fun CalendarScreen(
                     .padding(16.dp)
             ){
 
-                TasksTimeline(
-                    tasks = uiState.tasksForDay,
+                EventsTimeline(
+                    events = uiState.eventsForDay,
                     currentDate = selectedDate
                 )
             }

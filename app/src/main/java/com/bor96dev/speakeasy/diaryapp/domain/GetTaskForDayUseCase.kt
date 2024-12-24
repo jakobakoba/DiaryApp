@@ -5,7 +5,7 @@ import java.time.ZoneId
 import java.util.Date
 
 class GetTaskForDayUseCase(private val repository: EventRepository) {
-    suspend operator fun invoke(date: Date): List<Task> {
+    suspend operator fun invoke(date: Date): List<Event> {
         val localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
         return repository.getEventsForDay(localDate)
     }
