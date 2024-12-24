@@ -17,5 +17,8 @@ object AppModule {
     @Singleton
     fun provideEventRepository(@ApplicationContext context: Context) : EventRepository = EventRepositoryImpl(context)
 
+    @Provides
+    @Singleton
+    fun provideApplicationContext(@ApplicationContext app: Context) : Context = app
 
 }
