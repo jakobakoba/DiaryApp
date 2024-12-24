@@ -24,7 +24,8 @@ class CalendarViewModel @Inject constructor(
 
     init{
         viewModelScope.launch{
-
+            eventRepository.loadSampleData(context)
+            loadEventsForToday()
         }
     }
 
